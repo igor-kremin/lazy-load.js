@@ -30,16 +30,11 @@ const lazy_scripts = getMetaContents('script');
         if (!eventStatus) {
             // Load styles
             lazy_styles.forEach(href => {
-                const link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.href = href;
-                document.head.appendChild(link);
+                document.head.appendChild(Object.assign(document.createElement('link'), { rel: 'stylesheet', href: href }));
             });
             // Load scripts
             lazy_scripts.forEach(src => {
-                const script = document.createElement('script');
-                script.src = src;
-                document.body.appendChild(script);
+                document.body.appendChild(Object.assign(document.createElement('script'), { src }))
             });
             eventStatus = true; // Prevent further execution
         }
