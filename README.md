@@ -60,7 +60,5 @@ Here is an example of a simple HTML document using the lazy load script:
 </head>
 <body>
     <h1>Lazy Load Example</h1>
-    <button onclick="getLocation()">Get Location</button>
-    <p id="location"></p>
 </body>
 </html>
